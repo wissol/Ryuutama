@@ -1,0 +1,414 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Unos últimos detalles...</h1>
+
+<div class="pure-g">
+
+    <div class="pure-u-1 pure-u-lg-5-12">
+
+        <h2>Arquetipo</h2>
+
+        {% if x["arquetipo"] == "Ofensivo" %}
+
+        <h3>Elegiste el Arquetipo Ofensivo</h3>
+
+        <p>Este Arquetipo es experto en el combate y la fortaleza física. Suele lucirse
+        cuando hay que golpear a monstruos en la cabeza o hacer demostraciones de
+        fuerza.</p>
+
+        <h3>Consigues las siguientes capacidades adicionales:</h3>
+
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+                <tr>
+                    <td>Capacidad</td> <td>Explicación</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Resistencia</td>
+                    <td>+4 a los PG máximos</td>
+                </tr>
+
+                <tr>
+                    <td>Potencia</td>
+                    <td>+1 a las tiradas de Daño en combate</td>
+                </tr>
+
+                <tr>
+                    <td>Especialidad en Armas</td>
+                    <td>1 Arma Dominada adicional</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        {% endif %}
+
+        {% if x["arquetipo"] == "Técnico" %}
+
+        <h2>Elegiste el Arquetipo Técnico</h2>
+
+        <p>Este Arquetipo suele mostrar una gran capacidad de concentración y destaca a
+        la hora de sobreponerse a circunstancias adversas. Su poder se manifiesta cuando
+        hay que realizar una tirada que no pueden permitirse fallar.</p>
+
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+                <tr>
+                    <td>Capacidad</td>
+                    <td>Explicación</td>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Precisión</td>
+                    <td>+1 adicional a las tiradas al usar Concentración, para un
+                    total de +2 ó +3</td>
+                </tr>
+
+                <tr>
+                    <td>Rapidez</td>
+                    <td>+1 a las tiradas de Iniciativa en combate</td>
+                </tr>
+
+                <tr>
+                    <td>Bolsillos</td>
+                    <td>+3 a la Capacidad de Carga</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        {% endif %}
+
+        {% if x["arquetipo"] == "Mágico" %}
+
+        <h2>Elegiste el Arquetipo Mágico</h2>
+
+        <p>Este Arquetipo puede manipular la energía mística conocida como “Magia”. La
+        Magia se divide en 2 tipos, Estacional y de Encantamientos, y a medida que los
+        personajes suben de nivel tendrán a su disposición Conjuros cada vez más
+        poderosos. Cuando un Viajero escoge el Arquetipo Mágico, recibe un grimorio en
+        el que almacenar sus Encantamientos. Si el grimorio se pierde, los
+        Encantamientos escritos en él se perderán también.</p>
+
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+                <tr>
+                    <td>Capacidad</td>
+                    <td>Explicación</td>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Voluntad</td>
+                    <td>+4 a los PM máximos</td>
+                </tr>
+
+                <tr>
+                    <td>Grimorio</td>
+                    <td>2 Encantamientos por nivel</td>
+                </tr>
+
+                <tr>
+                    <td>Hechicero Estacional</td>
+                    <td>Puede usar Magia Estacional</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        {% endif %}
+
+    </div>
+
+    <div class="pure-u-1 pure-u-lg-1-6">
+    </div>
+
+    <div class="pure-u-1 pure-u-lg-5-12">
+        <h2>Tu clase</h2>
+        {% if x["clase"] == "Noble" %}
+            <h3>Noble</h3>
+            <p>Un miembro de una casa noble, de extensa cultura, experto en el
+            arte de la guerra y educado para saber comportarse en cualquier
+            situación. Sin embargo, los nobles no están muy acostumbrados a la
+            vida al aire libre y la dureza del viaje.</p>
+
+            <h3>Tus Habilidades</h3>
+            <dl>
+                <dt>Etiqueta</dt>
+                <dd>Dejas una impresión positiva de ti mismo ante alguien de alto rango o estatus social elevado.</dd>
+
+                <dt>Cultura</dt>
+                <dd>Conoces información detallada sobre algo que has visto o escuchado.</dd>
+
+                <dt>Militar</dt>
+                <dd>Elige Hojas, Armas de Asta, o Arcos. El tipo escogido es
+                Arma Dominada para ti. Si el tipo elegido ya era tu
+                Arma Dominada, obtienes un +1 a las tiradas de Impactar.</dd>
+            </dl>
+
+        {% endif %}
+
+        {% if x["clase"] == "Trovador" %}
+            <h3>Trovador</h3>
+            <p>Un viajero entre Viajeros, el Trovador peregrina de pueblo en
+            pueblo, exhibiendo sus dones para el canto y el baile. El Trovador
+            posee habilidades que pueden ayudar al grupo en una gran variedad de
+            situaciones.</p>
+
+            <h3>Tus Habilidades</h3>
+            <dl>
+                <dt>Trotamundos</dt>
+                <dd>+1 a las tiradas de Viaje</dd>
+
+                <dt>Tradiciones</dt>
+                <dd>Puedes obtener información adicional sobre algo que hayas visto o escuchado.</dd>
+
+                <dt>Música</dt>
+                <dd>Todos los miembros del grupo tienen una bonificación de +1 a su siguiente tirada</dd>
+            </dl>
+
+        {% endif %}
+
+        {% if x["clase"] == "Mercader" %}
+            <h3>Mercador</h3>
+            <p>Comerciantes itinerantes que intercambian bienes entre los
+            distintos pueblos a cambio de oro y joyas. Los Mercaderes tienen
+            habilidades que les permiten comprar barato y vender a un precio
+            mayor. Gracias a su labia, tienden a salirse con la suya.</p>
+
+            <h3>Tus Habilidades</h3>
+            <dl>
+                <dt>Elocuencia</dt>
+                <dd>+1 a las tiradas de Negociación (INT + ESP), siempre activo.</dd>
+
+                <dt>Adiestrar</dt>
+                <dd>2 animales adicionales no necesitan comida ni agua durante el viaje, para un total de 3.</dd>
+
+                <dt>Comerciar</dt>
+                <dd>Puedes comprar objetos a un precio reducido o venderlos a un precio mayor.</dd>
+            </dl>
+
+        {% endif %}
+
+        {% if x["clase"] == "Cazador" %}
+            <h3>Cazador</h3>
+            <p>Personas que se ganan la vida en la naturaleza, utilizando su
+            saber y sus herramientas para cazar a sus presas. Los Cazadores
+            logran encontrar comida en casi cualquier terreno o clima, mientras
+            viajan hacia su destino. Pueden incluso comer monstruos.</p>
+
+            <h3>Tus Habilidades</h3>
+            <dl>
+                <dt>Rastrear</dt>
+                <dd>Encuentras a un monstruo. +1 al Daño contra cualquier monstruo que hayas encontrado.</dd>
+
+                <dt>Matarife</dt>
+                <dd>Consigues materiales a partir de un monstruo derrotado.</dd>
+
+                <dt>Cazar</dt>
+                <dd>Consigues un número de raciones igual a (resultado de la tirada – número objetivo), pero no
+puedes participar en la tirada de Acampada</dd>
+            </dl>
+
+        {% endif %}
+
+        {% if x["clase"] == "Sanador" %}
+            <h3>Sanador</h3>
+            <p>Médicos que se ganan el respeto de todos, tratando enfermedades
+            y curando heridas mediante plantas medicinales. Deberías asegurarte
+            de viajar con un Sanador si vas a atravesar tierras potencialmente
+            peligrosas.</p>
+
+            <h3>Tus Habilidades</h3>
+            <dl>
+                <dt>Curar</dt>
+                <dd>l personaje tratado recupera tantos PG como el resultado de
+                una tirada de INT+ESP. Durante un combate, sólo recupera el
+                resultado de tirar INT (un solo dado).</dd>
+
+                <dt>Primeros Auxilios</dt>
+                <dd>Cura una Condición de un personaje durante una hora.
+                Además, reduce la severidad de dicha Condición en una cantida
+                d igual al nivel del Sanador.</dd>
+
+                <dt>Forrajear</dt>
+                <dd>Encuentra 1 planta medicinal.</dd>
+            </dl>
+
+        {% endif %}
+
+        {% if x["clase"] == "Granjero" %}
+            <h3>Granjero</h3>
+            <p>Trabajadores que viven en armonía con la naturaleza, tomando lo
+            que ésta les provee. En su vida diaria realizan muchas tareas
+            diferentes, lo que les permite conocer una Habilidad de otra clase
+            de personaje.</p>
+
+            <h3>Tus Habilidades</h3>
+            <dl>
+                <dt>Robusto</dt>
+                <dd>+1 a las tiradas de Salud, todos los días. +3 a la Capacidad
+                de Carga.</dd>
+
+                <dt>Adiestrar</dt>
+                <dd>2 animales adicionales no necesitan comida ni agua durante el viaje, para un total de 3.</dd>
+
+                <dt>Oficio</dt>
+                <dd>Utiliza una Habilidad de otra clase con un penalizador de -1.</dd>
+            </dl>
+
+        {% endif %}
+
+
+        {% if x["clase"] == "Artesano" %}
+            <h3>Artesano</h3>
+            <p>Fabricantes de cosas útiles, cosas bellas, cosas deliciosas y
+            otros productos. Los Artesanos son capaces de reparar los objetos
+            que se rompan de camino a su destino. También pueden crear los
+            objetos comunes que necesiten.</p>
+
+            <h3>Tus Habilidades</h3>
+            <dl>
+                <dt>Matarife</dt>
+                <dd>Consigues materiales a partir de un monstruo derrotado.</dd>
+
+                <dt>Artesanía</dt>
+                <dd>abricas un objeto de tu especialidad. Escoge la categoría en
+                la que te especializas cuando eliges esta clase.</dd>
+
+                <dt>Reparar</dt>
+                <dd>Reparas un objeto, haciendo que su durabilidad vuelva a su
+                valor original.</dd>
+            </dl>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+
+<form class="pure-form pure-form-stacked" action="{{ url_for('personaje') }}" method="POST">
+    <fieldset>
+
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-lg-5-12">
+        {% if x["arquetipo"] == "Ofensivo" %}
+            <p>Como tu arquetipo es ofensivo, puedes elegir una segunda arma favorita</p>
+            <div class="pure-control-group">
+            <label for="sarma">Segunda Arma Favorita</label>
+            <select name="sarma" id="sarma">
+                {% for arma in no_f %}
+                    <option>{{ arma }}</option>
+                {% endfor %}
+            </select>
+            </div>
+        {% endif %}
+
+        {% if x["arquetipo"] == "Técnico" %}
+            <p>Como tu arquetipo es técnico no tienes opociones especiales</p>
+
+        {% endif %}
+
+        {% if x["arquetipo"] == "Mágico" %}
+            <p>Como tu arquetipo es mágico puedes elegir dos encantamientos de nivel bajo</p>
+            <div class="pure-control-group">
+            <label for="conjuro1">Elige tu Primer Encantamiento</label>
+            <select name="conjuro1" id="conjuro1">
+                {% for conjuro in conjuros %}
+                    <option>{{ conjuro }}</option>
+                {% endfor %}
+            </select>
+            </div>
+
+            <div class="pure-control-group">
+            <label for="conjuro2">Elige tu Segundo Encantamiento ¡Que sea distinto!</label>
+            <select name="conjuro2" id="conjuro2">
+                {% for conjuro in conjuros %}
+                    <option>{{ conjuro }}</option>
+                {% endfor %}
+            </select>
+            </div>
+
+            <div class="pure-control-group">
+            <label for="estacion">Elige tu Estación Mágica</label>
+            <select name="estacion" id="estacion">
+                {% for conjuro in conjuros %}
+                    <option>Primavera</option>
+                    <option>Verano</option>
+                    <option>Otoño</option>
+                    <option>Invierno</option>
+                {% endfor %}
+            </select>
+            </div>
+        {% endif %}
+    </div>
+
+
+    <div class="pure-u-1 pure-u-lg-1-6"></div>
+
+    <div class="pure-u-1 pure-u-lg-5-12">
+        {% if x["clase"] == "Noble" %}
+        <p>Como eres noble has sido entrenado en un arma militar. Escoge una: el
+        tipo escogido es Arma Dominada para ti. Si el tipo elegido ya era tu
+        Arma Dominada, obtienes un +1 a las tiradas de Impactar.</p>
+        <div class="pure-control-group">
+            <label for="militar">Elige tu Arma</label>
+            <select name="militar" id="militar">
+                <option>Hojas Largas</option>
+                <option>Arma de Asta</option>
+                <option>Arcos</option>
+            </select>
+        </div>
+        {% elif x["clase"] == "Granjero" %}
+        <p>Como eres granjero tienes derecho a una habilidad secundaria</p>
+        <div class="pure-control-group">
+            <label for="oficio">Elige tu Habilidad</label>
+            <select name="oficio" id="oficio">
+                <option>Tradiciones</option>
+                <option>Música</option>
+                <option>Comerciar</option>
+                <option>Rastrear</option>
+                <option>Matarife</option>
+                <otpion>Cazar</otpion>
+                <option>Curar</option>
+                <option>Primeros Auxilios</option>
+                <option>Forrajear</option>
+                <option>Artesanía</option>
+                <option>Reparar</option>
+                <option>Etiqueta</option>
+                <option>Cultura</option>
+                <option>Hojas Largas</option>
+                <option>Arma de Asta</option>
+                <option>Arcos</option>
+            </select>
+        </div>
+
+        {% else %}
+        <p>Como eres un {{ x["clase"] }} no tienes opciones especiales.</p>
+        {% endif %}
+    </div>
+
+
+        <div class="pure-g">
+            <div class="pure-u-1-3"></div>
+            <div class="pure-control-group pure-u-1-3">
+                <button type="submit" class="pure-button pure-button-primary" value="Submit">¡Botón!</button>
+            </div>
+            <div class="pure-u-1-3"></div>
+        </div>
+    </fieldset>
+</form>
+
+
+{% endblock %}

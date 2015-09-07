@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>¡Hola, {{ x['nombre'] }}!</h1>
+
+<div class = "pure-g">
+
+    <div class = "pure-u-1-3">
+        <p>Nombre: {{ x["nombre"] }}</p>
+    </div>
+
+    <div class = "pure-u-1-6">
+        <p>Edad: {{ x["edad"] }}</p>
+    </div>
+
+   <div class = "pure-u-1-6">
+        <p>Sexo: {{ x["genero"][0] }}</p>
+    </div>
+
+    <div class = "pure-u-1-6">
+        <p>Nivel: 1</p>
+    </div>
+
+   <div class = "pure-u-1-6">
+        <p>PE: </p>
+    </div>
+
+</div>
+
+<div class = "pure-g">
+
+    <div class = "pure-u-1-4">
+        <p>Clase: {{ x["clase"] }}</p>
+    </div>
+
+    <div class = "pure-u-1-4">
+        <p>Arquetipo: {{ x["arquetipo"] }}</p>
+    </div>
+
+</div>
+
+<h2>Habilidades</h2>
+
+
+<div class ="pure-g">
+{% for habilidad in x['habilidades'] %}
+    <div class = "pure-u-1 pure-u-lg-1-3">
+    <h3>Habilidad: {{ habilidad }}</h3>
+    <p>Efectos {{ efectos[habilidad] }}</p>
+    <p>Prerrequisitos: {{ pre[habilidad] }}</p>
+    <p>Características: {{ cars[habilidad] }}</p>
+    <p>Número Objetivo: {{ nobj[habilidad] }}</p>
+    </div>
+{% endfor %}
+</div>
+
+{% if x['clase'] == 'Granjero' %}
+<div class="pure-g">
+    <div class = "pure-u-1 pure-u-xl-1-3"></div>
+        <div class = "pure-u-1 pure-u-xl-1-3">
+            <p>Como eres un Granjero tu tercera habilidad es de libre elección, pero tienes
+            un -1 a tus tiradas.</p>
+        </div>
+    <div class = "pure-u-1 pure-u-xl-1-3"></div>
+</div>
+{% endif %}
+<p>Arma Favorita: {{ x['favorita'] }}</p>
+{% if x['arquetipo'] == 'Ofensivo' %}
+<p>Segunda Arma Favorita {{ x['sarma'] }}</p>
+{% endif %}
+{% if x['militar'] != 'nada' %}
+<p>Arma Militar: {{ x['militar'] }}</p>
+{% endif %}
+
+<h3>Color y Apariencia</h3>
+<p>{{ x['color'] }}</p>
+
+<h3>Hogar y Razón para Viajar</h3>
+<p>{{ x['hogar'] }}</p>
+
+<h2>Características</h2>
+
+
+<div class = "pure-g">
+
+    <div class = "pure-u-1-6">
+    </div>
+
+    <div class = "pure-u-1-6">
+        <h3>FUE d{{ x["fue"] }}</h3>
+    </div>
+
+    <div class="pure-u-1-6">
+        <h3>DES d{{ x["des"] }}</h3>
+    </div>
+
+    <div class="pure-u-1-6">
+        <h3>INT d{{ x["int"] }}</h3>
+    </div>
+
+    <div class="pure-u-1-6">
+        <h3>ESP d{{ x["esp"] }}</h3>
+    </div>
+
+    <div class = "pure-u-1-6">
+    </div>
+</div>
+
+<p>Puntos de golpe {{ x['pg'] }}</p>
+<p>Puntos mágicos {{ x['pm'] }}</p>
+<p>Iniciativa {{ x['iniciativa'] }}
+{% if x['arquetipo'] == 'Técnico' %}
+    +1 a la tirada de Iniciativa</p>
+    <p>+1 a la tirada de usar Concentración, para un total de +2 ó +3</p>
+{% endif %}
+{% if x['arquetipo'] == 'Ofensivo' %}
+    <p>+1 a la tirada de Daño en Combate</p>
+{% endif %}
+
+<p>Carga: {{ x['carga'] }}</p>
+<p>Salud: {{ x['salud'] }}</p>
+
+
+{% if x['arquetipo'] == 'Mágico' %}
+    <h2>Encantamientos</h2>
+    <ul>
+        <li>{{ x['conjuro1'] }}</li>
+        <li>{{ x['conjuro2'] }}</li>
+    </ul>
+    <h2>Magia Estacional: {{ x['estacion'] }}</h2>
+    <ul>
+        {% for encantamiento in x['estacional'] %}
+        <li>{{ encantamiento }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
