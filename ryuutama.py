@@ -225,4 +225,3 @@ def personaje():
 
     return render_template('personaje.html', x=x, efectos = efectos, pre = prerrequisitos, cars = cars, nobj = nobj)
 
-app.secret_key = "bEz\x02XN\xc2\xc8\x1c\xc9A\xe1MS\xd7,sdsafq\x98\xb9\x00m\\\xd7\xe9"
